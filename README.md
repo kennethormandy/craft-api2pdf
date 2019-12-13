@@ -1,4 +1,4 @@
-# craft-api2pdf plugin for Craft CMS 3.x
+# Api2Pdf plugin for Craft CMS 3.x
 
 Generate PDFs using api2pdf.com
 
@@ -28,8 +28,8 @@ Then, in the Craft CMS Control Panel, go to Settings → Plugins, and click the 
 
 ## Actions
 
-- `craft-api2pdf/pdf/generate-from-url`
-- `craft-api2pdf/pdf/generate-from-html`
+- `api2pdf/pdf/generate-from-url`
+- `api2pdf/pdf/generate-from-html`
 
 ## Twig
 
