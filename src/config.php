@@ -5,7 +5,7 @@
  * Generate PDFs using api2pdf.com
  *
  * @link      https://kennethormandy.com
- * @copyright Copyright (c) 2019 Kenneth Ormandy
+ * @copyright Copyright © 2019 Kenneth Ormandy
  */
 
 /**
