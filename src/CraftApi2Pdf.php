@@ -122,12 +122,8 @@ class CraftApi2Pdf extends Plugin
  * http://www.yiiframework.com/doc-2.0/guide-runtime-logging.html
  */
         Craft::info(
-            Craft::t(
-                'craft-api2pdf',
-                '{name} plugin loaded',
-                ['name' => $this->name]
-            ),
-            __METHOD__
+          $this->name . ' plugin loaded',
+          __METHOD__
         );
     }
 
