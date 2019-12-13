@@ -44,16 +44,35 @@ In progress. Add your own templates in `templates/pdf` (right now, the specific 
 
 ## Example
 
+Get the JSON response from Api2Pdf:
+
 ```html
 <form method="post" action="" accept-charset="UTF-8">
   <input
     type="hidden"
     name="action"
-    value="craft-api2pdf/pdf/generate-from-url"
+    value="api2pdf/pdf/generate-from-url"
   />
   <input type="hidden" name="url" value="https://example.com" />
   {{ csrfInput() }}
   <input class="btn" type="submit" value="Generate PDF from URL" />
+</form>
+```
+
+Redirect directly to the PDF url:
+
+```html
+<form method="post" action="" accept-charset="UTF-8">
+  <input
+    type="hidden"
+    name="action"
+    value="api2pdf/pdf/generate-from-url"
+  />
+  <!-- Redirect to the PDF URL -->
+  <input type="hidden" name="redirect" value="1" />
+  <input type="hidden" name="url" value="https://example.com" />
+  {{ csrfInput() }}
+  <input class="btn" type="submit" value="Generate PDF from URL with a redirect" />
 </form>
 ```
 
