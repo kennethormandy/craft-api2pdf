@@ -22,8 +22,11 @@
         }
     ],
     "require": {
-        "craftcms/cms": "^3.0.0-RC1"
+        "craftcms/cms": "^3.0.0-RC1",
+        "api2pdf/api2pdf.php": "dev-master"
     },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "repositories": [
       {
         "type": "vcs",
