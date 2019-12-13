@@ -39,11 +39,12 @@
         }
     },
     "extra": {
-        "name": "Api2Pdf",
-        "handle": "Api2Pdf",
+        "name": "API2PDF",
+        "handle": "api2pdf",
         "hasCpSettings": true,
         "hasCpSection": false,
-        "changelogUrl": "https://raw.githubusercontent.com/kennethormandy/craft-api2pdf/master/CHANGELOG.md",
+        "changelogUrl": "https://github.com/kennethormandy/craft-api2pdf/blob/master/CHANGELOG.md",
+        "documentationUrl": "https://github.com/kennethormandy/craft-api2pdf/blob/master/README.md"
         "components": {
             "pdfService": "kennethormandy\\craftapi2pdf\\services\\PdfService"
         },
