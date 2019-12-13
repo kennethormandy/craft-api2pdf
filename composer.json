@@ -39,7 +39,7 @@
         }
     },
     "extra": {
-        "name": "API2PDF",
+        "name": "Api2Pdf",
         "handle": "api2pdf",
         "hasCpSettings": true,
         "hasCpSection": false,
