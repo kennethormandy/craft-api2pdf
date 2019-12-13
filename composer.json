@@ -1,0 +1,49 @@
+{
+    "name": "kennethormandy/craft-api2pdf",
+    "description": "Generate PDFs using api2pdf.com",
+    "type": "craft-plugin",
+    "version": "0.2.0",
+    "keywords": [
+        "craft",
+        "cms",
+        "craftcms",
+        "craft-plugin",
+        "pdf",
+        "api2pdf"
+    ],
+    "support": {
+        "docs": "https://github.com/kennethormandy/craft-api2pdf/blob/master/README.md",
+        "issues": "https://github.com/kennethormandy/craft-api2pdf/issues"
+    },
+    "authors": [
+        {
+            "name": "Kenneth Ormandy",
+            "homepage": "https://kennethormandy.com"
+        }
+    ],
+    "require": {
+        "craftcms/cms": "^3.0.0-RC1"
+    },
+    "repositories": [
+      {
+        "type": "vcs",
+        "url": "https://github.com/api2pdf/api2pdf.php"
+      }
+    ],
+    "autoload": {
+        "psr-4": {
+          "kennethormandy\\craftapi2pdf\\": "src/"
+        }
+    },
+    "extra": {
+        "name": "Api2Pdf",
+        "handle": "Api2Pdf",
+        "hasCpSettings": true,
+        "hasCpSection": false,
+        "changelogUrl": "https://raw.githubusercontent.com/kennethormandy/craft-api2pdf/master/CHANGELOG.md",
+        "components": {
+            "pdfService": "kennethormandy\\craftapi2pdf\\services\\PdfService"
+        },
+        "class": "kennethormandy\\craftapi2pdf\\CraftApi2Pdf"
+    }
+}

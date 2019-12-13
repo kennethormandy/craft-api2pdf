@@ -1,0 +1,13 @@
+{# @var craft \craft\web\twig\variables\CraftVariable #}
+
+{% import "_includes/forms" as forms %}
+
+{{ forms.textField({
+    label: 'API Key',
+    instructions: 'Your API key from api2pdf.com',
+    id: 'apiKey',
+    name: 'apiKey',
+    class: 'code',
+    placeholder: 'a0a000a-00aa-00aa-000-a00aa00a00aa',
+    value: settings['apiKey']})
+}}
