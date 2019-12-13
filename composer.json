@@ -44,7 +44,7 @@
         "hasCpSettings": true,
         "hasCpSection": false,
         "changelogUrl": "https://github.com/kennethormandy/craft-api2pdf/blob/master/CHANGELOG.md",
-        "documentationUrl": "https://github.com/kennethormandy/craft-api2pdf/blob/master/README.md"
+        "documentationUrl": "https://github.com/kennethormandy/craft-api2pdf/blob/master/README.md",
         "components": {
             "pdfService": "kennethormandy\\craftapi2pdf\\services\\PdfService"
         },
