@@ -149,7 +149,7 @@ class CraftApi2Pdf extends Plugin
     protected function settingsHtml(): string
     {
         return Craft::$app->view->renderTemplate(
-            'craft-api2pdf/settings',
+            'api2pdf/settings',
             [
                 'settings' => $this->getSettings()
             ]

@@ -76,7 +76,7 @@ class PdfService extends Component
       \Craft::$app->view->setTemplateMode(View::TEMPLATE_MODE_CP);
 
       // Strangely, it seems necessary to leave out `templates/`
-      $templatePath = 'craft-api2pdf/pdf.twig';
+      $templatePath = 'api2pdf/pdf.twig';
 
       $pdfHtml = \Craft::$app->view->renderTemplate($templatePath, [
         'body' => 'Example body from plugin'
