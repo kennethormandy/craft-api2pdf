@@ -1,12 +1,10 @@
 # Api2Pdf plugin for Craft CMS 3.x
 
-Generate PDFs using api2pdf.com
-
-![Screenshot](resources/img/plugin-logo.png)
+Generate PDFs easily, using [Api2Pdf.com](https://www.api2pdf.com)
 
 ## Requirements
 
-This plugin requires Craft CMS 3.0.0 or later.
+This plugin requires Craft CMS 3.1.x or later.
 
 ## Installation
 

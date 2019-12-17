@@ -1,9 +1,13 @@
-# API2PDF Changelog
+# Release Notes for S3 Secure Downloads Api2Pdf
 
-All notable changes to this project will be documented in this file.
+## 0.2.0 - 2019-12-13
 
-The format is based on [Keep a Changelog](http://keepachangelog.com/) and this project adheres to [Semantic Versioning](http://semver.org/).
+### Added
+
+- Moves plugin into separate repository
 
 ## 0.1.0 - 2019-08-09
+
 ### Added
-- Initial release
+
+- Initial version
