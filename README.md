@@ -17,12 +17,8 @@ composer require kennethormandy/craft-api2pdf
 Then, in the Craft CMS Control Panel, go to Settings → Plugins, and click the “Install” button for craft-api2pdf. Or run:
 
 ```sh
-./craft install/plugin craft-api2pdf
+./craft install/plugin api2pdf
 ```
-
-<!-- I think it has to be craft-api2pdf rather than api2pdf, because the latter
-     is already a dependency, but I do also have the handle in composer.json set
-     to api2pdf only, so I am not totally sure where that is coming from. -->
 
 ## Actions
 
