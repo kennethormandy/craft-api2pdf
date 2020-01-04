@@ -24,7 +24,7 @@
     ],
     "require": {
         "craftcms/cms": "^3.1.0",
-        "api2pdf/api2pdf.php": "dev-master"
+        "api2pdf/api2pdf.php": "1.1.1"
     },
     "minimum-stability": "dev",
     "prefer-stable": true,
