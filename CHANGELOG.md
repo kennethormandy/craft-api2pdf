@@ -1,5 +1,10 @@
 # Release Notes for S3 Secure Downloads Api2Pdf
 
+## Next
+
+- Pins api2pdf dependency to specific version (v1.1.1)
+- Updates README
+
 ## 0.2.0 - 2019-12-13
 
 ### Added
