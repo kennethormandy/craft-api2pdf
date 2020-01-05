@@ -16,7 +16,7 @@ class PdfService extends Component
         parent::init();
     }
     
-    public function getClient($apiKey = null) {
+    private function _getClient($apiKey = null) {
       if ($apiKey == null) {
         $apiKey = CraftApi2Pdf::$plugin->getSettings()->getApiKey();        
       }
@@ -24,8 +24,12 @@ class PdfService extends Component
       return new Api2Pdf($apiKey);
     }
     
-    public function configureClient ($options = []) {
-      $apiClient = $this->getClient();
+    private function _configureClient ($options = []) {
+      // Allow the apiKey to be passed in as an option.
+      // This is undocumented, but useful for testing
+      $apiKey = isset($options['apiKey']) ? $options['apiKey'] : null;
+
+      $apiClient = $this->_getClient($apiKey);
       
       if ($options) {
         if (isset($options["inline"])) {
@@ -42,7 +46,7 @@ class PdfService extends Component
       return $apiClient;
     }
     
-    public function formatResponse ($resp, $redirect) {
+    private function _formatResponse ($resp, $redirect) {
       if ($resp) {
         $pdfUrl = $resp->getPdf();
 
@@ -100,7 +104,7 @@ class PdfService extends Component
     }
     
     public function generateFromUrl(string $url = 'https://example.com', $options = []) {    
-      $apiClient = $this->configureClient($options);
+      $apiClient = $this->_configureClient($options);
       $redirect = false;
 
       if (!$url) {
@@ -116,7 +120,7 @@ class PdfService extends Component
       }
       
       $resp = $apiClient->headlessChromeFromUrl($url, $options);
-      return $this->formatResponse($resp, $redirect);
+      return $this->_formatResponse($resp, $redirect);
     }
     
     public function generateFromHtml(string $html = '', array $options = []) {
@@ -130,7 +134,7 @@ class PdfService extends Component
       // }
       $redirect = false;
 
-      $apiClient = $this->configureClient($options);
+      $apiClient = $this->_configureClient($options);
 
       if (!$pdfHtml) {
         return [ "success" => false, "error" => "No HTML provided." ];        
@@ -141,11 +145,11 @@ class PdfService extends Component
       }
       
       $resp = $apiClient->headlessChromeFromHtml($pdfHtml, $options);
-      return $this->formatResponse($resp, $redirect);
+      return $this->_formatResponse($resp, $redirect);
     }
 
     public function mergeFromUrls(array $urls = [], array $options = []) {
-      $apiClient = $this->configureClient($options);
+      $apiClient = $this->_configureClient($options);
 
       if (!$urls || 0 >= sizeof($urls)) {
         return [ "success" => false, "error" => "No URLs provided." ];        
@@ -157,7 +161,7 @@ class PdfService extends Component
       // }
 
       $resp = $apiClient->merge($urls);
-      return $this->formatResponse($resp, $redirect);
+      return $this->_formatResponse($resp, $redirect);
     }
     
 }
