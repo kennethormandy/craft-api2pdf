@@ -114,16 +114,20 @@ class PdfService extends Component
     }
     
     public function generateFromHtml(string $html = '', $redirect, array $options = []) {
-      if ($html !== '') {
-        $pdfHtml = $this->renderPdfTemplateHtml();        
-      } else {
+      // if ($html !== '') {
+      //   $pdfHtml = $this->renderPdfTemplateHtml();        
+      // } else {
         // TODO Remove support for the $html argument from Twig, once it’s
         // possible to supply your own templates, ex. we get them from your
         // templates/api2pdf directory or whatever
         $pdfHtml = $html;
-      }
+      // }
 
       $apiClient = $this->configureClient($options);
+
+      if (!$pdfHtml) {
+        return [ "success" => false, "message" => "No HTML provided." ];        
+      }
       
       $resp = $apiClient->headlessChromeFromHtml($pdfHtml, $options);
       return $this->formatResponse($resp, $redirect);

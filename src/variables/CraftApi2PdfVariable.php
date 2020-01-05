@@ -45,10 +45,15 @@ class CraftApi2PdfVariable
      * @param null $optional
      * @return string
      */
-    public function headlessChromeFromHtml(string $html = null, array $options = null)
+    public function generateFromUrl(string $url = null, bool $redirect, array $options = null)
     {
-        $result = CraftApi2Pdf::getInstance()->pdfService->generatePdf('<h1>Hello from <code>action</code></h1>');
+        $result = CraftApi2Pdf::getInstance()->pdfService->generateFromUrl($url, $redirect, $options);
+        return $result;
+    }
 
+    public function generateFromHtml(string $html = null, bool $redirect, array $options = null)
+    {
+        $result = CraftApi2Pdf::getInstance()->pdfService->generateFromHtml($html, $redirect, $options);
         return $result;
     }
 }
