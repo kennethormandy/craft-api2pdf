@@ -1,12 +1,40 @@
-# Release Notes for S3 Secure Downloads Api2Pdf
+# Release Notes for Api2Pdf
+
+<!--
+
+## X.Y.Z - YYYY-MM-DD
+
+### Added
+### Changed
+### Deprecated
+### Removed
+### Fixed
+### Security
+
+-->
+
+## Next
+
+### Added
+
+- Adds support for passing in the API key as an option
+- Adds basic tests
 
 ## 0.3.0 - 2020-01-04
 
-- Clarified API: everything other than the initial URL or HTML is provided as options
+### Added
+
 - Adds support for matching generating functions in Twig and as actions, updates README
 - Adds support for using an environment variable for settings API key
-- Pins api2pdf dependency to specific version (v1.1.1)
+
+### Changed
+
+- Clarified API: everything other than the initial URL or HTML is provided as options
 - Updates README
+
+### Fixed
+
+- Pins api2pdf dependency to specific version (v1.1.1)
 
 ## 0.2.0 - 2019-12-13
 
