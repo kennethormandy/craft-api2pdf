@@ -1,6 +1,6 @@
 <?php
 /**
- * API2PDF plugin for Craft CMS 3.x
+ * Api2Pdf plugin for Craft CMS 3.x
  *
  * Generate PDFs using api2pdf.com
  *

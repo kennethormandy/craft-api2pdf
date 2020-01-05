@@ -24,7 +24,7 @@
 
 return [
 
-    // You API2PDF key 
+    // You Api2Pdf key 
     "apiKey" => "",
 
 ];
