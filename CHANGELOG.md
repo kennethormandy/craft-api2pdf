@@ -1,8 +1,8 @@
 # Release Notes for S3 Secure Downloads Api2Pdf
 
-## Next
+## 0.3.0 - 2020-01-04
 
-- Simplified API: everything other than the initial URL or HTML is provided as options
+- Clarified API: everything other than the initial URL or HTML is provided as options
 - Adds support for matching generating functions in Twig and as actions, updates README
 - Adds support for using an environment variable for settings API key
 - Pins api2pdf dependency to specific version (v1.1.1)
