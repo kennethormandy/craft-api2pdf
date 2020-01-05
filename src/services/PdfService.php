@@ -28,13 +28,13 @@ class PdfService extends Component
       $apiClient = $this->getClient();
       
       if ($options) {
-        if ($options["inlinePdf"]) {
-          $apiClient->setInline($options["inlinePdf"]);
+        if (isset($options["inline"])) {
+          $apiClient->setInline($options["inline"]);
         }
-        if ($options["fileName"]) {
-          $apiClient->setFilename($options["fileName"]);
+        if (isset($options["filename"]) && $options["filename"]) {
+          $apiClient->setFilename($options["filename"]);
         }
-        if ($options) {
+        if (isset($options) && $options) {
           $apiClient->setOptions($options);
         }
       }
@@ -61,7 +61,7 @@ class PdfService extends Component
       } else {
         return [
           "success" => false,
-          "message" => "No response."
+          "error" => "No response."
         ];
       }
     }
@@ -99,21 +99,27 @@ class PdfService extends Component
       return $pdfHtml;
     }
     
-    public function generateFromUrl(string $url = 'https://example.com', $redirect, $options = []) {    
+    public function generateFromUrl(string $url = 'https://example.com', $options = []) {    
       $apiClient = $this->configureClient($options);
+      $redirect = false;
+
       if (!$url) {
-        return [ "success" => false, "message" => "No URL provided." ];        
+        return [ "success" => false, "error" => "No URL provided." ];        
       }
       
       if (strpos($url, 'localhost:') !== false || strpos($url, 'ddev') !== false) {
-        return [ "success" => false, "message" => "Invalid URL: local URL provided, which API2PDF won’t be able to access: " . $url ];        
+        return [ "success" => false, "error" => "Invalid URL: local URL provided, which Api2Pdf won’t be able to access: " . $url ];        
+      }
+
+      if (isset($options['redirect'])) {
+        $redirect = $options['redirect'];
       }
       
       $resp = $apiClient->headlessChromeFromUrl($url, $options);
       return $this->formatResponse($resp, $redirect);
     }
     
-    public function generateFromHtml(string $html = '', $redirect, array $options = []) {
+    public function generateFromHtml(string $html = '', array $options = []) {
       // if ($html !== '') {
       //   $pdfHtml = $this->renderPdfTemplateHtml();        
       // } else {
@@ -122,27 +128,32 @@ class PdfService extends Component
         // templates/api2pdf directory or whatever
         $pdfHtml = $html;
       // }
+      $redirect = false;
 
       $apiClient = $this->configureClient($options);
 
       if (!$pdfHtml) {
-        return [ "success" => false, "message" => "No HTML provided." ];        
+        return [ "success" => false, "error" => "No HTML provided." ];        
+      }
+      
+      if (isset($options['redirect'])) {
+        $redirect = $options['redirect'];
       }
       
       $resp = $apiClient->headlessChromeFromHtml($pdfHtml, $options);
       return $this->formatResponse($resp, $redirect);
     }
 
-    public function mergeFromUrls($urls = [], $redirect, array $options = []) {
+    public function mergeFromUrls(array $urls = [], array $options = []) {
       $apiClient = $this->configureClient($options);
 
       if (!$urls || 0 >= sizeof($urls)) {
-        return [ "success" => false, "message" => "No URLs provided." ];        
+        return [ "success" => false, "error" => "No URLs provided." ];        
       }
       
       // TODO Check each URL to make sure it isn’t local
       // if (strpos($url, 'localhost:') !== false || strpos($url, 'ddev') !== false) {
-      //   return [ "success" => false, "message" => "Invalid URL: local URL provided, which API2PDF won’t be able to access: " . $url ];        
+      //   return [ "success" => false, "error" => "Invalid URL: local URL provided, which Api2Pdf won’t be able to access: " . $url ];        
       // }
 
       $resp = $apiClient->merge($urls);

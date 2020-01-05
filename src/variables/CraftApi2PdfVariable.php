@@ -45,15 +45,15 @@ class CraftApi2PdfVariable
      * @param null $optional
      * @return string
      */
-    public function generateFromUrl(string $url = null, bool $redirect, array $options = null)
+    public function generateFromUrl(string $url = null, array $options = null)
     {
-        $result = CraftApi2Pdf::getInstance()->pdfService->generateFromUrl($url, $redirect, $options);
+        $result = CraftApi2Pdf::getInstance()->pdfService->generateFromUrl($url, $options);
         return $result;
     }
 
-    public function generateFromHtml(string $html = null, bool $redirect, array $options = null)
+    public function generateFromHtml(string $htmlString = null, array $options = null)
     {
-        $result = CraftApi2Pdf::getInstance()->pdfService->generateFromHtml($html, $redirect, $options);
+        $result = CraftApi2Pdf::getInstance()->pdfService->generateFromHtml($htmlString, $options);
         return $result;
     }
 }

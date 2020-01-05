@@ -30,6 +30,35 @@ Then, in the Craft CMS Control Panel, go to Settings → Plugins, and click the 
 - [`craft.api2pdf.generateFromUrl`](twig-generatefromurl-function)
 - [`craft.api2pdf.generateFromHtml`](twig-generatefromhtml-function)
 
+## Options
+
+<table>
+<thead>
+  <tr>
+    <th>Option</th>
+    <th>Type</th>
+    <th>Description</th>
+  </tr>
+</thead>
+<tbody>
+  <tr>
+    <td><code>filename</code></td>
+    <td>String</td>
+    <td></td>
+  </tr>
+  <tr>
+    <td><code>redirect</code></td>
+    <td>Boolean</td>
+    <td>Redirect directly to the PDF URL</td>
+  </tr>
+</tbody>
+</table>
+
+- `filename`
+- `redirect`
+
+All [advanced options for Headless Chrome](https://www.api2pdf.com/documentation/advanced-options-headless-chrome/) to pass along to Api2Pdf are also supported.
+
 ## Examples
 
 ### Action `generate-from-url`
@@ -53,14 +82,19 @@ Redirect directly to the PDF url:
 
 ```html
 <form method="post" action="" accept-charset="UTF-8">
+  
   <input
     type="hidden"
     name="action"
     value="api2pdf/pdf/generate-from-url"
   />
-  <!-- Redirect to the PDF URL -->
-  <input type="hidden" name="redirect" value="1" />
+
+  <!-- Set the URL (your site or any public URL) to use -->
   <input type="hidden" name="url" value="https://example.com" />
+
+  <!-- Redirect to the PDF URL -->
+  <input type="hidden" name="options[redirect]" value="1" />
+
   {{ csrfInput() }}
   <input type="submit" value="Generate PDF from URL with a redirect" />
 </form>
@@ -72,15 +106,43 @@ Redirect directly to the PDF made using an HTML string:
 
 ```html
 <form method="post" action="" accept-charset="UTF-8">
+
   <input
     type="hidden"
     name="action"
     value="api2pdf/pdf/generate-from-html"
   />
-  <input type="hidden" name="redirect" value="1" />
+
+  <!-- Set the custom HTML string -->
   <input type="hidden" name="html" value="<p>Hello from action with HTML</p>" />
+
+  <!-- Redirect to the PDF URL -->
+  <input type="hidden" name="options[redirect]" value="1" />
+
   {{ csrfInput() }}
   <input type="submit" value="Generate with redirect from HTML" />
+</form>
+```
+
+Offer an editable filename:
+
+```html
+<form method="post" action="" accept-charset="UTF-8">
+
+  <input
+    type="hidden"
+    name="action"
+    value="api2pdf/pdf/generate-from-html"
+  />
+
+  <!-- Set the custom HTML string -->
+  <input type="hidden" name="html" value="<p>Hello</p>" />
+
+  <!-- Set the filename to the value of the form input -->
+  <input type="text" name="options[filename]" value="test.pdf" />
+
+  {{ csrfInput() }}
+  <input type="submit" value="Generate from HTML" />
 </form>
 ```
 
@@ -104,26 +166,31 @@ Redirect directly to the PDF made using an HTML string:
 {% endif %}
 ```
 
-Slightly more complicated example:
+Slightly more detailed example:
 
 ```twig
 {% set redirect = false %}
-{% set options = {} %}
-{% set result = craft.api2pdf.generateFromHtml('<h1>Hello</h1>', redirect, options) %}
+{% set options = {
+  redirect: true,
+  filename: "test.pdf"
+} %}
+{% set result = craft.api2pdf.generateFromHtml('<h1>Hello</h1>', options) %}
 
 {% if result and result.success %}
 
   {# Display the URL #}
   <p>{{ result.pdf }}</p>
 
-  {# The other pieces of metadata availabe #}
+  {# The other pieces of metadata available #}
   <ul>
-    <li>{{ result.mbIn }}mb</li>
+    <li>{{ result.mbIn|round }}mb</li>
     <li>{{ result.mbOut|round }}mb</li>
     <li>US${{ result.cost|round }}</li>
     <li>{{ result.responseId }}</li>
   </ul>
   
+{% else %}
+  <p>{{ result.error }}</p>
 {% endif %}
 ```
 

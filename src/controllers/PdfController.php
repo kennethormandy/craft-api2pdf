@@ -16,9 +16,8 @@ class PdfController extends Controller
     {
       $request = Craft::$app->getRequest();
       $htmlString = $request->getParam('html');
-      $redirect = $request->getParam('redirect') ?? false;
       $options = $this->_getOptions($request);
-      $result = CraftApi2Pdf::getInstance()->pdfService->generateFromHtml($htmlString, $redirect, $options);
+      $result = CraftApi2Pdf::getInstance()->pdfService->generateFromHtml($htmlString, $options);
       return $this->asJson($result);
     }
     
@@ -26,9 +25,8 @@ class PdfController extends Controller
     {
       $request = Craft::$app->getRequest();
       $url = $request->getParam('url');
-      $redirect = $request->getParam('redirect') ?? false;
       $options = $this->_getOptions($request);
-      $result = CraftApi2Pdf::getInstance()->pdfService->generateFromUrl($url, $redirect, $options);
+      $result = CraftApi2Pdf::getInstance()->pdfService->generateFromUrl($url, $options);
       return $this->asJson($result);
     }
     
@@ -39,9 +37,10 @@ class PdfController extends Controller
       if (!$urls) {
         $urls = [];
       }
-      $redirect = $request->getParam('redirect') ?? false;
+
       $options = $this->_getOptions($request);
-      $result = CraftApi2Pdf::getInstance()->pdfService->mergeFromUrls($urls, $redirect, $options);
+
+      $result = CraftApi2Pdf::getInstance()->pdfService->mergeFromUrls($urls, $options);
       return $this->asJson($result);
     }
     
@@ -51,6 +50,7 @@ class PdfController extends Controller
       if (!$options) {
         $options = [];
       }
+
       return $options;
     }
 }
