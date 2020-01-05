@@ -51,5 +51,13 @@
             "pdfService": "kennethormandy\\craftapi2pdf\\services\\PdfService"
         },
         "class": "kennethormandy\\craftapi2pdf\\CraftApi2Pdf"
+    },
+    "require-dev": {
+        "codeception/codeception": "^4.0",
+        "codeception/module-asserts": "^1.1",
+        "vlucas/phpdotenv": "^4.1"
+    },
+    "scripts": {
+      "test": "vendor/bin/codecept run --debug"
     }
 }
