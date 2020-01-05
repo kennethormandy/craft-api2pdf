@@ -11,6 +11,7 @@ use kennethormandy\craftapi2pdf\CraftApi2Pdf;
 
 use Craft;
 use craft\base\Model;
+use craft\behaviors\EnvAttributeParserBehavior;
 
 /**
  * Api2Pdf Settings Model
@@ -34,6 +35,27 @@ class Settings extends Model
     // =========================================================================
 
     /**
+     * @return string the parsed API key
+     */
+    public function getApiKey(): string
+    {
+      return Craft::parseEnv($this->apiKey);
+    }
+    
+    /*
+     * https://docs.craftcms.com/v3/extend/environmental-settings.html#validation
+     */
+    public function behaviors()
+    {
+        return [
+            'parser' => [
+                'class' => EnvAttributeParserBehavior::class,
+                'attributes' => ['apiKey'],
+            ],
+        ];
+    }
+
+    /**
      * Returns the validation rules for attributes.
      *
      * More info: http://www.yiiframework.com/doc-2.0/guide-input-validation.html
@@ -43,6 +65,7 @@ class Settings extends Model
     public function rules()
     {
         return [
+            ['apiKey', 'required'],
             ['apiKey', 'string'],
             ['apiKey', 'default', 'value' => ''],
         ];

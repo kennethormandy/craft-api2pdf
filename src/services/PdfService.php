@@ -18,7 +18,7 @@ class PdfService extends Component
     
     public function getClient($apiKey = null) {
       if ($apiKey == null) {
-        $apiKey = CraftApi2Pdf::$plugin->getSettings()->apiKey;        
+        $apiKey = CraftApi2Pdf::$plugin->getSettings()->getApiKey();        
       }
 
       return new Api2Pdf($apiKey);
