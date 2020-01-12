@@ -20,6 +20,12 @@ Then, in the Craft CMS Control Panel, go to Settings → Plugins, and click the 
 ./craft install/plugin api2pdf
 ```
 
+## Settings
+
+The only setting required to run the plugin is an API key from Api2Pdf, which can (and probably should) be set to an [environment variable](https://docs.craftcms.com/v3/config/environments.html):
+
+![Craft Api2Pdf settings panel in the Craft CMS admin area](https://user-images.githubusercontent.com/1581276/72213557-ebe31f00-34a5-11ea-8d49-c8b2f0327828.png)
+
 ## Actions
 
 - [`api2pdf/pdf/generate-from-url`](#action-generate-from-url)
