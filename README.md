@@ -217,4 +217,6 @@ In progress. Add your own templates in `templates/pdf` (right now, the specific 
 
 ## License
 
-Copyright © [Kenneth Ormandy Inc.](https://kennethormandy.com)
+[The MIT License (MIT)](./LICENSE.md)
+
+Copyright © 2019–2020 [Kenneth Ormandy Inc.](https://kennethormandy.com)
