@@ -14,7 +14,7 @@ To install the plugin, require the plugin using Composer:
 composer require kennethormandy/craft-api2pdf
 ```
 
-Then, in the Craft CMS Control Panel, go to Settings → Plugins, and click the “Install” button for craft-api2pdf. Or run:
+Then, in the Craft CMS Control Panel, go to Settings → Plugins, and click the “Install” button for Craft Api2Pdf. Or run:
 
 ```sh
 ./craft install/plugin api2pdf
