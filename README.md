@@ -1,3 +1,5 @@
+<img src="./src/icon.svg" alt="Craft Api2Pdf icon" width="150" />
+
 # Api2Pdf plugin for Craft CMS 3.x
 
 Generate PDFs easily, using [Api2Pdf.com](https://www.api2pdf.com)
