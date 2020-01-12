@@ -1,5 +1,6 @@
 <?php
 namespace kennethormandy\craftapi2pdf\controllers;
+
 use kennethormandy\craftapi2pdf\CraftApi2Pdf;
 
 use Craft;
@@ -14,43 +15,43 @@ class PdfController extends Controller
 
     public function actionGenerateFromHtml()
     {
-      $request = Craft::$app->getRequest();
-      $htmlString = $request->getParam('html');
-      $options = $this->_getOptions($request);
-      $result = CraftApi2Pdf::getInstance()->pdfService->generateFromHtml($htmlString, $options);
-      return $this->asJson($result);
+        $request = Craft::$app->getRequest();
+        $htmlString = $request->getParam('html');
+        $options = $this->_getOptions($request);
+        $result = CraftApi2Pdf::getInstance()->pdfService->generateFromHtml($htmlString, $options);
+        return $this->asJson($result);
     }
     
     public function actionGenerateFromUrl(string $url = '')
     {
-      $request = Craft::$app->getRequest();
-      $url = $request->getParam('url');
-      $options = $this->_getOptions($request);
-      $result = CraftApi2Pdf::getInstance()->pdfService->generateFromUrl($url, $options);
-      return $this->asJson($result);
+        $request = Craft::$app->getRequest();
+        $url = $request->getParam('url');
+        $options = $this->_getOptions($request);
+        $result = CraftApi2Pdf::getInstance()->pdfService->generateFromUrl($url, $options);
+        return $this->asJson($result);
     }
     
     public function actionMergeFromUrls()
     {
-      $request = Craft::$app->getRequest();
-      $urls = $request->getParam('urls');
-      if (!$urls) {
-        $urls = [];
-      }
+        $request = Craft::$app->getRequest();
+        $urls = $request->getParam('urls');
+        if (!$urls) {
+            $urls = [];
+        }
 
-      $options = $this->_getOptions($request);
+        $options = $this->_getOptions($request);
 
-      $result = CraftApi2Pdf::getInstance()->pdfService->mergeFromUrls($urls, $options);
-      return $this->asJson($result);
+        $result = CraftApi2Pdf::getInstance()->pdfService->mergeFromUrls($urls, $options);
+        return $this->asJson($result);
     }
     
-    private function _getOptions ($request)
+    private function _getOptions($request)
     {
-      $options = $request->getParam('options');
-      if (!$options) {
-        $options = [];
-      }
+        $options = $request->getParam('options');
+        if (!$options) {
+            $options = [];
+        }
 
-      return $options;
+        return $options;
     }
 }

@@ -16,7 +16,7 @@ use craft\behaviors\EnvAttributeParserBehavior;
 /**
  * Api2Pdf Settings Model
  * https://craftcms.com/docs/plugins/models
- * 
+ *
  * @author    Kenneth Ormandy
  * @package   Api2Pdf
  * @since     0.1.0
@@ -39,7 +39,7 @@ class Settings extends Model
      */
     public function getApiKey(): string
     {
-      return Craft::parseEnv($this->apiKey);
+        return Craft::parseEnv($this->apiKey);
     }
     
     /*
