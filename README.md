@@ -200,6 +200,11 @@ Slightly more detailed example:
 {% endif %}
 ```
 
+## Notes
+
+- This plugin only supports Headless Chrome for PDF generation. I plan on adding support for `merge`, but not any other endpoints. If you are interested in adding support for another endpoint, I’d be open to a Pull Request.
+- This plugin is build for v1 of the Api2Pdf API, but support for the [v2 endpoint](https://www.api2pdf.com/api2pdf-launches-v2-in-beta/) may be added when it’s out of beta, the Api2Pdf client libraries are also updated
+
 <!--
 
 ## Templates
