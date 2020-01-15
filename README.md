@@ -108,7 +108,7 @@ Redirect directly to the PDF url:
 </form>
 ```
 
-### Action `generate-from-url`
+### Action `generate-from-html`
 
 Redirect directly to the PDF made using an HTML string:
 
