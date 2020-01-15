@@ -35,8 +35,8 @@ The only setting required to run the plugin is an API key from Api2Pdf, which ca
 
 ## Twig
 
-- [`craft.api2pdf.generateFromUrl`](twig-generatefromurl-function)
-- [`craft.api2pdf.generateFromHtml`](twig-generatefromhtml-function)
+- [`craft.api2pdf.generateFromUrl`](#twig-generatefromurl-function)
+- [`craft.api2pdf.generateFromHtml`](#twig-generatefromhtml-function)
 
 ## Options
 
