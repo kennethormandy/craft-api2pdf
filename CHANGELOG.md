@@ -2,9 +2,13 @@
 
 ## Unreleased
 
+## 0.4.0 - 2020-01-12
+
 ### Added
 - Adds support for passing in the API key as an option
 - Adds basic tests
+- Adds icon
+- Adds license
 
 ## 0.3.0 - 2020-01-04
 
