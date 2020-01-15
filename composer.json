@@ -45,7 +45,7 @@
         "hasCpSettings": true,
         "hasCpSection": false,
         "developer": "Kenneth Ormandy Inc.",
-        "changelogUrl": "https://raw.githubusercontent.com/kennethormandy/craft-api2pdf/master/CHANGELOG.md?token=AHW7N4V5Q4IS6BIGYEFZKV26AGTEI",
+        "changelogUrl": "https://raw.githubusercontent.com/kennethormandy/craft-api2pdf/master/CHANGELOG.md",
         "documentationUrl": "https://github.com/kennethormandy/craft-api2pdf/blob/master/README.md",
         "components": {
             "pdfService": "kennethormandy\\craftapi2pdf\\services\\PdfService"
