@@ -18,3 +18,5 @@ jobs:
 
     - name: Run test suite
       run: composer run-script test
+      env:
+        API2PDF_KEY: ${{ secrets.API2PDF_KEY }}
