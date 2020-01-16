@@ -1,6 +1,5 @@
 <?php 
 use \Codeception\Test\Unit;
-use \Dotenv\Dotenv;
 use kennethormandy\craftapi2pdf\services\PdfService;
 
 class PdfServiceTest extends Unit
@@ -11,9 +10,6 @@ class PdfServiceTest extends Unit
     protected function _before()
     {
       parent::_before(); 
-
-      $dotenv = Dotenv::createImmutable(__DIR__ . './../../'); 
-      $dotenv->load();
 
       $this->service = new PdfService();
       $this->apiKey = getenv('API2PDF_KEY');

@@ -2,6 +2,9 @@
 
 ## Unreleased
 
+### Changed
+- Removed manual loading of `.env` file, fixing running of tests on CI
+
 ## [0.4.0 - 2020-01-12](https://github.com/kennethormandy/craft-api2pdf/releases/tag/v0.4.0)
 
 ### Added
