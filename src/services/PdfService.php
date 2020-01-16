@@ -20,6 +20,8 @@ class PdfService extends Component
     private function _getClient($apiKey = null)
     {
         if ($apiKey == null) {
+            // TODO Some kind of error message—confusing if you run
+            // tests without an API key
             $apiKey = CraftApi2Pdf::$plugin->getSettings()->getApiKey();
         }
     
