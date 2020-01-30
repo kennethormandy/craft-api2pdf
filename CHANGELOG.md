@@ -1,7 +1,5 @@
 # Release Notes for Api2Pdf
 
-## Unreleased
-
 ## [0.5.0 - 2020-01-30](https://github.com/kennethormandy/craft-api2pdf/releases/tag/v0.5.0)
 
 ### Added
