@@ -52,21 +52,36 @@ class PdfServiceTest extends Unit
         $opts = [ "apiKey" => $this->apiKey ];
         $pdf1 = $this->service->generateFromUrl('https://example.com', $opts);
         $pdf2 = $this->service->generateFromUrl('https://example.com', $opts);
-
+    
         $pdfs = [
           $pdf1['pdf'],
           $pdf2['pdf']
         ];
-
+    
         $res = $this->service->mergeFromUrls($pdfs, $opts);
-
+    
         codecept_debug($res);
-
+    
         $this->assertTrue($res['success']);
         $this->assertContains('url', $res);
         $this->assertContains('mbIn', $res);
         $this->assertTrue($res['mbIn'] > 0);
     }
     
-    
+    public function testMergeLocalUrls()
+    {
+        $opts = [ "apiKey" => $this->apiKey ];
+        $pdfs = [
+        'http://localhost:8000/2.pdf',
+        'http://localhost:9000/1.pdf'
+      ];
+
+        $res = $this->service->mergeFromUrls($pdfs, $opts);
+
+        codecept_debug($res);
+
+        $this->assertArrayHasKey('success', $res);
+        $this->assertArrayHasKey('error', $res);
+        $this->assertFalse($res['success']);
+    }
 }
