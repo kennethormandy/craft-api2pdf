@@ -183,7 +183,7 @@ class PdfService extends Component
         foreach ($urls as $key => $url) {
           // Check each URL to make sure it isn’t local
           if ($this->_getIsLocalUrl($url)) {
-              return $this->_getLocalUrlResponse;
+              return $this->_getLocalUrlResponse($url);
           }
         }
 
