@@ -49,15 +49,10 @@ class PdfServiceTest extends Unit
     
     public function testMergeFromUrl()
     {
-        codecept_debug('merge');
-      
         $opts = [ "apiKey" => $this->apiKey ];
         $pdf1 = $this->service->generateFromUrl('https://example.com', $opts);
         $pdf2 = $this->service->generateFromUrl('https://example.com', $opts);
 
-        codecept_debug($pdf1);
-        codecept_debug($pdf2);
-      
         $pdfs = [
           $pdf1['pdf'],
           $pdf2['pdf']
@@ -72,4 +67,6 @@ class PdfServiceTest extends Unit
         $this->assertContains('mbIn', $res);
         $this->assertTrue($res['mbIn'] > 0);
     }
+    
+    
 }
