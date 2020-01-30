@@ -58,7 +58,7 @@ class CraftApi2PdfVariable
         return $result;
     }
     
-    public function merge(array $urls = null, array $options = null)
+    public function merge(array $urls = null, array $options = [])
     {
         $result = CraftApi2Pdf::getInstance()->pdfService->merge($urls, $options);
         return $result;
