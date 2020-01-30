@@ -75,6 +75,20 @@ class PdfService extends Component
         ];
         }
     }
+    
+    private function _getIsLocalUrl(string $url)
+    {
+      return strpos($url, 'localhost:') !== false || strpos($url, 'ddev') !== false;
+    }
+    
+    private function _getLocalUrlResponse (string $url)
+    {
+      $msg = "Invalid URL: local URL provided, which Api2Pdf won’t be able to access: " . $url;
+      return [
+        "success" => false,
+        "error" => $msg
+      ];
+    }
 
     public function renderPdfTemplateHtml()
     {
@@ -119,8 +133,8 @@ class PdfService extends Component
             return [ "success" => false, "error" => "No URL provided." ];
         }
 
-        if (strpos($url, 'localhost:') !== false || strpos($url, 'ddev') !== false) {
-            return [ "success" => false, "error" => "Invalid URL: local URL provided, which Api2Pdf won’t be able to access: " . $url ];
+        if ($this->_getIsLocalUrl($url)) {
+            return $this->_getLocalUrlResponse;
         }
 
         if (isset($options['redirect'])) {
@@ -166,10 +180,12 @@ class PdfService extends Component
             return [ "success" => false, "error" => "No URLs provided." ];
         }
 
-        // TODO Check each URL to make sure it isn’t local
-        // if (strpos($url, 'localhost:') !== false || strpos($url, 'ddev') !== false) {
-        //   return [ "success" => false, "error" => "Invalid URL: local URL provided, which Api2Pdf won’t be able to access: " . $url ];
-        // }
+        foreach ($urls as $key => $url) {
+          // Check each URL to make sure it isn’t local
+          if ($this->_getIsLocalUrl($url)) {
+              return $this->_getLocalUrlResponse;
+          }
+        }
 
         $resp = $apiClient->merge($urls);
         return $this->_formatResponse($resp, $redirect);
