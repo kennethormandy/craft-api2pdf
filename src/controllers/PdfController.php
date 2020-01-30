@@ -31,7 +31,7 @@ class PdfController extends Controller
         return $this->asJson($result);
     }
     
-    public function actionMergeFromUrls()
+    public function actionMerge()
     {
         $request = Craft::$app->getRequest();
         $urls = $request->getParam('urls');
@@ -41,7 +41,7 @@ class PdfController extends Controller
 
         $options = $this->_getOptions($request);
 
-        $result = CraftApi2Pdf::getInstance()->pdfService->mergeFromUrls($urls, $options);
+        $result = CraftApi2Pdf::getInstance()->pdfService->merge($urls, $options);
         return $this->asJson($result);
     }
     
