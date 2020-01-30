@@ -171,7 +171,7 @@ class PdfService extends Component
         return $this->_formatResponse($resp, $redirect);
     }
 
-    public function mergeFromUrls(array $urls = [], array $options = [])
+    public function merge(array $urls = [], array $options = [])
     {
         $apiClient = $this->_configureClient($options);
         $redirect = false;

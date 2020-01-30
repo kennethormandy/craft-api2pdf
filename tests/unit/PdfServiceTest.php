@@ -58,7 +58,7 @@ class PdfServiceTest extends Unit
           $pdf2['pdf']
         ];
     
-        $res = $this->service->mergeFromUrls($pdfs, $opts);
+        $res = $this->service->merge($pdfs, $opts);
     
         codecept_debug($res);
     
@@ -76,7 +76,7 @@ class PdfServiceTest extends Unit
         'http://localhost:9000/1.pdf'
       ];
 
-        $res = $this->service->mergeFromUrls($pdfs, $opts);
+        $res = $this->service->merge($pdfs, $opts);
 
         codecept_debug($res);
 
