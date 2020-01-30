@@ -57,4 +57,10 @@ class CraftApi2PdfVariable
         $result = CraftApi2Pdf::getInstance()->pdfService->generateFromHtml($htmlString, $options);
         return $result;
     }
+    
+    public function merge(array $urls = null, array $options = null)
+    {
+        $result = CraftApi2Pdf::getInstance()->pdfService->merge($urls, $options);
+        return $result;
+    }
 }
