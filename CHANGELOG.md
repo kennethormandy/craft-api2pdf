@@ -2,8 +2,17 @@
 
 ## Unreleased
 
+## [0.5.0 - 2020-01-30](https://github.com/kennethormandy/craft-api2pdf/releases/tag/v0.5.0)
+
+### Added
+- Adds support for `merge` action
+- Adds Twig `merge` function
+
 ### Changed
 - Removed manual loading of `.env` file, fixing running of tests on CI
+
+### Fixed
+- Examples in README using `url` instead of `pdf` in result
 
 ## [0.4.0 - 2020-01-12](https://github.com/kennethormandy/craft-api2pdf/releases/tag/v0.4.0)
 
