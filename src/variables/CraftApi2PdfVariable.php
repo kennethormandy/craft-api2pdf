@@ -47,6 +47,7 @@ class CraftApi2PdfVariable
      */
     public function generateFromUrl(string $url = null, array $options = null)
     {
+        // TODO Change this to CraftApi2Pdf::$plugin
         $result = CraftApi2Pdf::getInstance()->pdfService->generateFromUrl($url, $options);
         return $result;
     }
