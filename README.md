@@ -205,7 +205,6 @@ These URLs passed to this function need to be hosted PDFs. Whether or not they w
 Slightly more detailed example:
 
 ```twig
-{% set redirect = false %}
 {% set options = {
   redirect: true,
   filename: "test.pdf"
