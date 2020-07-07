@@ -1,6 +1,6 @@
 # Release Notes for Api2Pdf
 
-## [0.5.0 - 2020-01-30](https://github.com/kennethormandy/craft-api2pdf/releases/tag/v0.5.0)
+## 0.5.0 - 2020-01-30
 
 ### Added
 - Adds support for `merge` action
@@ -12,7 +12,7 @@
 ### Fixed
 - Examples in README using `url` instead of `pdf` in result
 
-## [0.4.0 - 2020-01-12](https://github.com/kennethormandy/craft-api2pdf/releases/tag/v0.4.0)
+## 0.4.0 - 2020-01-12
 
 ### Added
 - Adds support for passing in the API key as an option
@@ -20,7 +20,7 @@
 - Adds icon
 - Adds license
 
-## [0.3.0 - 2020-01-04](https://github.com/kennethormandy/craft-api2pdf/releases/tag/v0.3.0)
+## 0.3.0 - 2020-01-04
 
 ### Added
 - Adds support for matching generating functions in Twig and as actions, updates README
