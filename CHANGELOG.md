@@ -1,5 +1,10 @@
 # Release Notes for Api2Pdf
 
+## 1.0.0 - 2023-01-03
+
+### Changed
+- Craft 4 compatibility
+
 ## 0.5.0 - 2020-01-30
 
 ### Added

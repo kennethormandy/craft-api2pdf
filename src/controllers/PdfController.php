@@ -11,7 +11,7 @@ class PdfController extends Controller
     // TODO This might change based on whether we want everyone
     // logged into the site to make these. Possibly would
     // be configurable.
-    protected $allowAnonymous = true;
+    protected array|int|bool $allowAnonymous = true;
 
     public function actionGenerateFromHtml()
     {

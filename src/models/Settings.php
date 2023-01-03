@@ -45,7 +45,7 @@ class Settings extends Model
     /*
      * https://docs.craftcms.com/v3/extend/environmental-settings.html#validation
      */
-    public function behaviors()
+    public function behaviors(): array
     {
         return [
             'parser' => [
@@ -62,7 +62,7 @@ class Settings extends Model
      *
      * @return array
      */
-    public function rules()
+    public function rules(): array
     {
         return [
             ['apiKey', 'required'],

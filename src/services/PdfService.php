@@ -12,7 +12,7 @@ use Api2Pdf\Api2Pdf;
 
 class PdfService extends Component
 {
-    public function init()
+    public function init(): void
     {
         parent::init();
     }
@@ -145,7 +145,7 @@ class PdfService extends Component
         return $this->_formatResponse($resp, $redirect);
     }
 
-    public function generateFromHtml(string $html = '', array $options = [])
+    public function generateFromHtml(string $html = '', array $options = null)
     {
         // if ($html !== '') {
         //   $pdfHtml = $this->renderPdfTemplateHtml();
