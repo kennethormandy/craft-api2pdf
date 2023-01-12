@@ -10,7 +10,13 @@ This plugin requires Craft CMS 3.1.x or later, or Craft 4.0.0 or later.
 
 ## Installation
 
-To install the plugin, require the plugin using Composer:
+The Craft 4 version of the plugin is [currently tagged as a beta release](https://github.com/kennethormandy/craft-api2pdf/pull/5). You can install it with:
+
+```sh
+composer require kennethormandy/craft-api2pdf:^1.0.0-beta.1
+```
+
+Otherwise, require the plugin using Composer like normal:
 
 ```sh
 composer require kennethormandy/craft-api2pdf
