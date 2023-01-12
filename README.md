@@ -1,12 +1,12 @@
 <img src="./src/icon.svg" alt="Craft Api2Pdf icon" width="150" />
 
-# Api2Pdf plugin for Craft CMS 3.x/4.x
+# Api2Pdf plugin for Craft CMS
 
 Generate PDFs easily, using [Api2Pdf.com](https://www.api2pdf.com)
 
 ## Requirements
 
-This plugin requires Craft CMS 3.1.x or later or Craft 4.0.0-alpha.1 or later.
+This plugin requires Craft CMS 3.1.x or later, or Craft 4.0.0 or later.
 
 ## Installation
 
