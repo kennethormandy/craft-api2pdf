@@ -1,9 +1,17 @@
 # Release Notes for Api2Pdf
 
+## 4.0.0 - 2023-01-03
+
+### Added
+- Added Craft 4 compatibility (no changes from v1.0.0-beta.1)
+
+### Removed
+- Removed indication of support for Craft v3.x from `composer.json`
+
 ## 1.0.0-beta.1 - 2023-01-03
 
-### Changed
-- Craft 4 compatibility
+### Added
+- Added Craft 4 compatibility
 
 ## 0.5.0 - 2020-01-30
 
