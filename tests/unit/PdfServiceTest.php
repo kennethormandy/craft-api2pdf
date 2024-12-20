@@ -28,9 +28,9 @@ class PdfServiceTest extends Unit
         codecept_debug($res);
     
         $this->assertTrue($res['success']);
-        $this->assertContains('url', $res);
-        $this->assertContains('mbIn', $res);
-        $this->assertTrue($res['mbIn'] > 0);
+        $this->assertArrayHasKey('pdf', $res);
+        $this->assertArrayHasKey('mbIn', $res);
+        $this->assertTrue($res['mbOut'] > 0);
     }
     
     public function testGenerateFromUrl()
@@ -42,9 +42,9 @@ class PdfServiceTest extends Unit
         codecept_debug($res);
     
         $this->assertTrue($res['success']);
-        $this->assertContains('url', $res);
-        $this->assertContains('mbIn', $res);
-        $this->assertTrue($res['mbIn'] > 0);
+        $this->assertArrayHasKey('pdf', $res);
+        $this->assertArrayHasKey('mbIn', $res);
+        $this->assertTrue($res['mbOut'] > 0);
     }
     
     public function testMergeFromUrl()
@@ -63,9 +63,9 @@ class PdfServiceTest extends Unit
         codecept_debug($res);
     
         $this->assertTrue($res['success']);
-        $this->assertContains('url', $res);
-        $this->assertContains('mbIn', $res);
-        $this->assertTrue($res['mbIn'] > 0);
+        $this->assertArrayHasKey('pdf', $res);
+        $this->assertArrayHasKey('mbIn', $res);
+        $this->assertTrue($res['mbOut'] > 0);
     }
     
     public function testMergeLocalUrls()
